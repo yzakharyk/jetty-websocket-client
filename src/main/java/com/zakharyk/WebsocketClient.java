@@ -9,7 +9,7 @@ import java.net.URI;
 import java.util.Scanner;
 
 public class WebsocketClient {
-    private static final String WEBSOCKET_SERVER_ENDPOINT = "wss://localhost:10444";
+    private static final String WEBSOCKET_SERVER_ENDPOINT = "wss://stream.binance.com:9443/ws/btcusdt@trade";
     public static final long HEART_BEAT_FREQUENCY_MS = 5000L;
 
     public static void main(String[] args) throws Exception {
@@ -27,7 +27,7 @@ public class WebsocketClient {
         // latch is used here to await connection with the server
         socket.getLatch().await();
         // format of heartbeats could be adjusted
-        sendHeartbeats(socket);
+       // sendHeartbeats(socket);
         sendMessageFromConsole(socket);
     }
 
