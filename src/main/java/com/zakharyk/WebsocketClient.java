@@ -32,8 +32,9 @@ public class WebsocketClient {
     }
 
     private static void sendMessageFromConsole(ToUpperClientSocket socket) {
+        var scanner = new Scanner(System.in);
         while (true) {
-            var message = new Scanner(System.in).nextLine();
+            var message = scanner.nextLine();
             socket.sendMessage(message);
         }
     }
